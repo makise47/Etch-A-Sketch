@@ -1,0 +1,90 @@
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 1em;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 20vh 10vh 70vh;
+    grid-template-areas:
+    "title-text"
+    "controls"
+    "grid";
+}
+
+.title-text {
+    grid-area: title-text;
+    align-self: center;
+    justify-self: center;
+}
+
+.controls {
+    grid-area: controls;
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 35vw 10vw 10vw 10vw 35vw;
+    grid-template-areas:
+    ". colour eraser slider .";
+}
+
+.color {
+    grid-area: colour;
+    align-self: center;
+    justify-self: center;
+    width: 50%;
+}
+
+.eraser {
+    grid-area: eraser;
+    align-self: center;
+    justify-self: center;
+    width: 50%;
+}
+
+.slider {
+    grid-area: slider;
+    align-self: center;
+    justify-self: center;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 10px; /* Specified height */
+    border-radius: 20px;
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    border-radius: 100%;
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.grid {
+    grid-area: grid;
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    width: 500px;
+    height: 500px;
+    background-color: var(--secondary-light);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
